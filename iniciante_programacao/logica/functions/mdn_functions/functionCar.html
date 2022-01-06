@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+
+function trocaCarro(objeto) {
+    objeto.make = "Toyota";
+}
+var meucarro = {make: "Honda", model: "Accord", year: 1998};
+
+var x, y; // declaração da função X e Y, vazias
+  
+x = meucarro.make;     // x recebe o valor "Honda"
+// O comando a cima, atribui para a variável x o valor que está contido no Array
+// meucarro que é igual a "Honda"
+
+trocaCarro(meucarro);
+y = meucarro.make;
+// Y receberá um valor diferente, porque o Array recebe uma nova atribuição(onde foi trocado o valor para Toyota)
+
+var newModel = "Ford"
+
+meucarro.model = newModel
+
+console.log(x,y, meucarro)
+</script>
+
+
