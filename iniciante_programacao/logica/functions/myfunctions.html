@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<script>
+// escreva as funções sempre nas primeiras linhas do
+// nosso código.
+
+function pulaLInha() { //use function para declarar a função.
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function print(texto) {
+    document.write(texto)
+    pulaLInha(); // Uma função pode fazer chamada para outra função.
+}
+
+// Toda função precisa ter parênteses, mesmo quando não tem argumento.
+
+ano = 2022;
+
+var idadeFlavio = ano - 1977;
+var idadeJoaquim = ano - 1996;
+var idadeBarney = ano - 1976;
+
+var mediaIdade = (idadeFlavio + idadeJoaquim + idadeBarney) / 3;
+
+print("A média das idades é " + Math.round(mediaIdade));
+
+var nome = "Flávio";
+
+print("A idade de " + nome + " é " + idadeFlavio);
+pulaLInha(); // O nome da função, seguido de parêntese, chama a função.
+
+
+
+    
+</script>
