@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLInha() {
+        document.write("<br>");
+
+    }
+
+function print(texto) {
+        document.write(texto)
+        pulaLInha();
+    }
+function calculaIMC(peso, altura) { 
+    var imc = peso / (altura * altura) // a função executa um calculo e exibe na tela
+    print("O imc calculado é: " + Math.round(imc)) // através do print o valor do imc.
+}
+
+var pesoIzac = 86
+var alturaIzac = 1.70
+
+calculaIMC(pesoIzac, alturaIzac); // chama-mos a função, passando dois valores
+                                 // primeiro peso de altura, ondem dada pela função.
+    
+</script>
+

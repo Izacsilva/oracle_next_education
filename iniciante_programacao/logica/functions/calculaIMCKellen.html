@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+    }
+
+    function calculaImc(altura, peso) {
+
+        return peso / ( altura * altura );
+    }
+
+    mostra("O meu IMC é " + calculaImc(1.63, 48));
+
+    // O que Kellen fez foi usar o valor de retorno para concatenar com a string
+    // a esquerda, o que não é errado, mas armazenar o valor em uma variável antes
+    // possibilita ter um código mais claro.
+
+</script>
