@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function print(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    // faça um programa que calcula a média das idades
+    // de uma família.
+    // primeiro o usuário passa a quantidade de membros da família
+    // em seguida ele digita a idade para membro.
+    function calculaIdades(quantidadeMembros, somaIdades) {
+        return somaIdades / quantidadeMembros;
+    };
+
+    var membros = parseInt(prompt("Informe quantos membros tem sua família: "))
+    var somaIdades = 0;
+    var contaFamilia = 0;
+
+    while (contaFamilia < membros) {
+        var idadesFamilia = parseInt(prompt("Informe a idade dos membros da sua família: "))
+        somaIdades = somaIdades + idadesFamilia;
+        contaFamilia++;
+    }
+
+    mediaIdades = calculaIdades(membros, somaIdades);
+
+    print("A média de idades da sua família é: " + mediaIdades);
+
+</script>

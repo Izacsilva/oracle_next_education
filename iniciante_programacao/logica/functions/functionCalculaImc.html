@@ -1,24 +1,41 @@
 <meta charset="UTF-8">
 
 <script>
-function pulaLinha() {
+    function pulaLinha() {
         document.write("<br>");
     }
 
-function print(frase) {
+    function print(frase) {
         document.write(frase);
         pulaLinha();
     }
 
-function calculaImc(peso, altura) {
-    return peso / (altura * altura)
-}
+    function calculaImc(altura, peso) {
+        return peso / (altura * altura);
+    }
 
-var nome = prompt("Por favor informe seu nome: ");
-var peso = prompt("Olá " + nome + " por favor informe seu peso: ");
-var altura = prompt(nome + " agora por favor informe a altura: ");
+    var nome = prompt("Por favor informe seu nome: ");
+    var altura = parseFloat(prompt("Olá " + nome + " por favor informe seu altura: "));
+    // parseFloat pq parseInt iria converter 
+    // para inteiro 1.70 == 170, sendo 
+    // assim o calculo não daria certo
+    var peso = parseInt(prompt(nome + " agora por favor informe a peso: "));
 
-var imc = calculaImc(peso, altura);
+    var imc = Math.round(calculaImc(altura, peso));
 
-print(nome + " Seu imc é " + imc);
+
+    print(nome + " Seu imc é " + imc);
+
+    if (imc < 18.5) {
+        print("Seu IMC está a baixo do recomendado!")
+    };
+
+    if (imc > 35) {
+        print("Seu IMC está acima do recomendado!")
+    };
+
+    if (imc >= 18.5 && imc <= 35) {
+
+        print("Seu IMC está normal!")
+    };
 </script>

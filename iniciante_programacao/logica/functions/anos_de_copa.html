@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function print(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+
+var limite = parseInt(prompt("Entre com uma data limite: "))
+
+var primeiraCopa = 1930;
+
+while (primeiraCopa < limite) {
+    print("Teve compa em " + primeiraCopa)
+    primeiraCopa = primeiraCopa + 4;
+}
+
+print("FIM")
+</script>
