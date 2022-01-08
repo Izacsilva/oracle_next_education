@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+    <input type="text" style="display: block; margin-bottom: 1rem;">
+    <button>comparar</button>
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function print(frase) {
+
+        document.write("<p>" + frase + "</p>"); 
+        pulaLinha();
+    }
+
+    function verificar() {
+        if (entrada.value == segredo) {
+            alert("Você ACERTOU! " + ">>>" + segredo + "<<<")
+        } else {
+            alert("Você ERROU!!!!!!!! " + ">>>" + segredo + "<<<")
+        }
+        entrada.value = "";
+        entrada.focus();
+    }
+
+    
+
+    var segredo = Math.round(Math.random() * 10)
+
+    var entrada = document.querySelector("input")
+
+    entrada.focus();
+
+    var botao = document.querySelector("button")
+    botao.onclick = verificar;
+
+    
+
+
+
+    
+</script>
