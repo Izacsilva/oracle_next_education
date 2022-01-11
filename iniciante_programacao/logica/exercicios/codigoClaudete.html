@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+    var letras = ['A', 'B', 'C', 'D'];
+    // O código de bruno, contém uma condicional que testa
+    // uma repetição até um quinto elemento
+    // pois a condicional testa uma igualdade <=
+    for (var i = 0; i <= letras.length; i++) {
+        alert(letras[i]);
+    }
+
+    //O problema esta na condição do loop for.
+
+    // <= letras.length;
+
+    // Isso significa que a variável i será incrementada de 0 até 4,
+    // o que não esta correto.Se temos 4 elementos da lista,
+    // os índices devem ir de 0 a 3,
+    // pois o último índice é o tamanho da lista menos um.Para
+    // resolver basta usarmos < no lugar de <=:
+
+
+</script>
