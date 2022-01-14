@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<canvas width="600" height="400">
+
+</canvas>
+<script>
+    var tela = document.querySelector("canvas");
+    // querySelector, irá selecionar um elemento canva no HTML
+    // Com esse elemento selecionado, podemos manipular-lo com o javascript
+    // utilizando propriedades, funções, métodos que a api do canva disponibiliza.
+    var pincel = tela.getContext('2d'); // 'pincel' para 'tela'
+
+
+    // A api do canva disponibiliza algumas método e propriedades, uma delas o método getContext()
+    // renderiza o tipo de gráfico que iremos utilizar no nosso quadro.
+    // vamos indicar que usaremos 2d, para renderizar e armazenaremos o valor em pincel.
+
+    pincel.fillStyle = 'lightgrey'
+    pincel.fillRect(0, 0, 600, 400);
+
+    // Pincel é como uma ferramenta e utilizaremos ele para desenhar e manipular
+    // gráficos no nosso canva, nossa tela de 600x400.
+    // fillStyle é uma propriedade"property" para manipular estilos,
+    // fillRect()"method", beginPath()"method", lineTo()"method" 
+    // são metodos, que recebem parâmetros, de tamanho e posição, que traçam coordenadas do nosso desenho.
+
+    pincel.fillStyle = 'green' // fillStyle, indica que utilizaremos verde para a cor do retangulo fillRect()
+    pincel.fillRect(0, 0, 200, 400); // fillRect() indica que desenharemos um retangulo.
+
+    pincel.fillStyle = 'red'
+    pincel.fillRect(400, 0, 200, 400);
+
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath(); // beginPath() inicio do "caminho", caminho é o traçado do desenho.
+    pincel.moveTo(300, 200); //moveTo(), que começa do ponto x,y
+    pincel.lineTo(200, 400); //lineTo(), vai para outras cordenas x e y.
+    pincel.lineTo(400, 400);
+    pincel.fill()             // fill() é o prenchimento, se o style é Amarelo então a cor de preencimento será amarelo.
+
+</script>

@@ -1,0 +1,28 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+
+/*
+- Utilizar função, nos ajuda a deixar o código mais légivel,
+- na função desenhaQuadradoVerde() fica mais fácil de ler que ao ser invocada ela desenhará
+- um quadrado verde na nossa tela. Além de ser légivel, a função nos ajuda a escrever menos
+- pois não escrevemos o mesmo código várias vezes.
+
+
+*/
+    function desenhaQuadradoVerde() {
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = 'green';  // fillStyle == preenchimento interno
+        pincel.fillRect(0, 0, 50, 50);
+        pincel.strokeStyle = 'black'; // strokeStyle == preenchimento das bordas
+        pincel.strokeRect(0, 0, 50, 50);
+
+}
+
+desenhaQuadradoVerde();
+
+</script>
