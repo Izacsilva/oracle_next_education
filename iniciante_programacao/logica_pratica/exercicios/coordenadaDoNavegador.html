@@ -1,0 +1,57 @@
+<canvas width="600" height="400"></canvas>
+<button id="clicka">clicar</button>
+<!-- <button id="alerta">alertar</button> -->
+
+<script>
+
+    var tela = document.querySelector('canvas')
+    var pincel = tela.getContext('2d')
+    var botao = document.getElementById("clicka")
+    var alerte = document.querySelector("#alerta")
+
+
+
+    function clicar() {
+        pincel.fillStyle = 'grey'
+        pincel.fillRect(0, 0, 600, 400)
+    }
+    function desenhaCirculo(x, y) {
+
+        pincel.fillStyle = "blue"
+        pincel.beginPath();
+        pincel.arc(x, y, 20, 0, 2 * 3.14);
+        pincel.fill()
+    }
+
+    function desenhaQuadrado(x, y) {
+
+        pincel.fillStyle = "blue"
+        pincel.fillRect(x, y, 10, 10)
+        pincel.fill()
+    }
+
+    function exibeAlerta(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;;
+
+        console.log(x + "<>" + y)
+        // document.write("<h1>" + evento.x + "<br>" + evento.y + "</h1>")
+
+        // pincel.fillStyle = "blue"
+        // pincel.beginPath();
+        // pincel.arc(x, y, 5, 0, 2 * 3.14);
+        // pincel.fill()
+
+        desenhaCirculo(x, y)
+
+
+    }
+
+
+
+
+    botao.onclick = clicar;
+    tela.onclick = exibeAlerta;
+    console.log(clicar)
+</script>
