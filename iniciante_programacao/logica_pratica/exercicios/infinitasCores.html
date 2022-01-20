@@ -1,0 +1,58 @@
+<canvas width="600" height="400"></canvas>
+
+<p>Escolha uma cor </p>
+
+<input type="color" id="colores">
+
+<script>
+    var tela = document.querySelector('canvas'); // Selecionar o canva
+    var pincel = tela.getContext('2d'); // Render do gráfico
+    var cor = document.querySelector('#colores')
+
+    // Retangulo cinza, de 600-400.
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0,0,600,400);
+
+    var desenha = false; // Variável de condição, se false não desenha, se true desenha.
+
+    function desenhaCirculo(evento) {
+
+        if (desenha) { // Condicional que testa a variável.
+            
+             // Captura os eventos  // Delimita a ação dentro
+             // da página           // do canva.
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            
+            // Cria um circulo azul com raio de 10 e as coordenadas é dada pela posição
+            // do click do mouse em cima da tela.
+
+            pincel.fillStyle = cor.value;
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+
+        }
+            // Irá exibir no console as coordenadas do click do mouse.
+        // console.log(x + ',' + y);
+    }
+
+    tela.onmousemove = desenhaCirculo;
+
+    function habilitaDesenhar () {
+        
+        desenha = true;
+    }
+
+    function desabilitaDesenhar () {
+
+        desenha = false;
+    }
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
+
+
+</script>
+
