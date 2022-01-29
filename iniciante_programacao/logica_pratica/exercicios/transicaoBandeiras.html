@@ -1,0 +1,77 @@
+
+<body onload="transicao();">
+    
+
+<canvas  width="600" height="400"></canvas>
+</body>
+<script>
+
+    let transicaoBandeira;
+    let transicaoBrasil;
+    let transicaoAlemanha;
+
+    function desenhaBandeiraBrasil() {
+        let tela = document.querySelector("canvas");
+        let pincel = tela.getContext("2d");
+
+        pincel.fillStyle = "green";
+        pincel.fillRect(0, 0, 600, 400);
+
+        pincel.fillStyle = "yellow";
+        pincel.beginPath();
+        pincel.moveTo(300, 50);
+        pincel.lineTo(50, 200);
+        pincel.lineTo(300, 350);
+        pincel.lineTo(550, 200);
+        pincel.fill();
+
+        pincel.fillStyle = "darkblue"
+        pincel.beginPath();
+
+        pincel.arc(300, 200, 100, 0, 2 * Math.PI)
+        pincel.fill();
+
+        
+    }
+
+    function desenhaBandeiraAlemanha() {
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = 'black';
+        pincel.fillRect(0, 0, 600, 133);
+
+        pincel.fillStyle = 'red';
+        pincel.fillRect(0, 133, 600, 133);
+
+        pincel.fillStyle = 'yellow';
+        pincel.fillRect(0, 266, 600, 133);
+}
+
+
+// Minha implementaçõa.
+    // function trocaBandeira() {
+    //     transicaoBrasil = setInterval(desenhaBandeiraBrasil, 3000)
+    //     transicaoAlemanha = setInterval(desenhaBandeiraAlemanha, 6000)
+    // }
+
+    
+    let mostraBrasil = true;
+
+    function trocaBandeira() {
+
+        if (mostraBrasil) {
+            desenhaBandeiraBrasil();
+        } else {
+            desenhaBandeiraAlemanha();
+        }
+
+        mostraBrasil = !mostraBrasil
+    }
+
+    function transicao() {
+        transicaoBandeira = setInterval(trocaBandeira, 3000)
+    }
+
+    
+</script>

@@ -44,5 +44,17 @@ for (var i = 0; i < pacientes.length; i++) {
     
 }
 
+const botaoAdicionar = querySelector('#adicionar-paciente')
+
+botaoAdicionar.addEventListener('click', function(){
+    alert('paciente adicionado!')
+})
+
+titulo.addEventListener('click', mostraMensagem);
+
+function mostraMensagem() {
+    alert('fui cliclado!')
+}
+
 
 
