@@ -1,0 +1,17 @@
+<button id="botao">clique-me</button>
+<script>
+
+    var botao = document.querySelector('#botao');
+
+    function botaoHandler() {
+
+        alert('Botão clicado');
+    }
+
+
+    // O botao de Maria faz uso da função errado, não precisa utilizar os parênteses
+    
+    //botao.addEventListener('click', botaoHandler());
+
+    botao.addEventListener('click', botaoHandler);
+</script>

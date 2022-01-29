@@ -1,8 +1,12 @@
 var titulo = document.querySelector('.titulo')
 titulo.textContent = "Aparecida Nutricionista"
 
+// Seleção da tr paciente, usando o querySelectorAll para criar uma lista
+// com todos os elementos
 var pacientes = document.querySelectorAll(".paciente");
 
+// Criamos um loop para passar em cada item da lista e ir selecionando
+// e "manipulando" cada um individualmente.
 for (var i = 0; i < pacientes.length; i++) {
     var paciente = pacientes[i]
 
@@ -18,6 +22,7 @@ for (var i = 0; i < pacientes.length; i++) {
     var pesoValido = true;
     var alturaValido = true;
     
+    // validação do peso caso não atenda os padrões
     if (peso < 0 || peso > 400) {
         celulaImc.textContent = "Peso Inválido"
         var pesoValido = false;
@@ -25,18 +30,19 @@ for (var i = 0; i < pacientes.length; i++) {
 
     }
 
+    // validação da altura
     if (altura < 1 || altura > 3.00) {
         celulaImc.textContent = "altura Inválido"
         var alturaValido = false;
         paciente.classList.add("paciente-invalido")
     }
 
-    if (pesoValido && alturaValido) {
-        var imc = peso / (altura * altura);
-        celulaImc.textContent = imc;
-    }
+    // if (pesoValido && alturaValido) {
+    //     var imc = peso / (altura * altura);
+    //     celulaImc.textContent = imc;
+    // }
     
-    
+    // Calcula o imc caso esteja válido
     if (pesoValido && alturaValido) {
         var imc = peso / (altura * altura);
         celulaImc.textContent = imc.toFixed(2)
@@ -44,17 +50,6 @@ for (var i = 0; i < pacientes.length; i++) {
     
 }
 
-const botaoAdicionar = querySelector('#adicionar-paciente')
-
-botaoAdicionar.addEventListener('click', function(){
-    alert('paciente adicionado!')
-})
-
-titulo.addEventListener('click', mostraMensagem);
-
-function mostraMensagem() {
-    alert('fui cliclado!')
-}
 
 
 
