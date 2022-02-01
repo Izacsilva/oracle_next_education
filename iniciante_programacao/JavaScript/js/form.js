@@ -9,16 +9,20 @@ botaoAdicionar.addEventListener('click', function(event){
     const campoPeso = document.querySelector('#peso')
     const campoAltura = document.querySelector('#altura')
     const campoGordura = document.querySelector('#gordura')
+    
     // Capturo todos os valores dos elementos da tabela
 
-    let nome = formulario.nome.value;
-    let peso = formulario.peso.value;
-    let altura = formulario.altura.value;
-    let gordura = formulario.gordura.value;
+    // Através da função obtem Dados retorno
+    let paciente = obtemDadosPacientes(formulario);
+
+    // let nome = formulario.nome.value;
+    // let peso = formulario.peso.value;
+    // let altura = formulario.altura.value;
+    // let gordura = formulario.gordura.value;
 
     // Crio variável com elementos('tag') HTML <tr> e <td> 
-    let pacienteTr = document.createElement('tr');
-
+    // let pacienteTr = document.createElement('tr');
+    montaTr('paciente')
     /* Eu estava selecionando, não criando elementos */
     // let nomeTd = document.querySelector('td');
     // let pesoTd = document.querySelector('td');
@@ -40,7 +44,7 @@ botaoAdicionar.addEventListener('click', function(event){
     pesoTd.textContent = peso;
     alturaTd.textContent = altura;
     gorduraTd.textContent = gordura;
-    // imcTd.textContent = nome;
+    imcTd.textContent = calculaImc(peso, altura);
 
     // Dentro da tabela do formulário vou adicionar o <tr> com os <td>
 
@@ -48,6 +52,7 @@ botaoAdicionar.addEventListener('click', function(event){
     pacienteTr.appendChild(pesoTd);
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
+    pacienteTr.appendChild(imcTd);
 
     let tabela = document.querySelector('#tabela-pacientes')
 
@@ -59,6 +64,25 @@ botaoAdicionar.addEventListener('click', function(event){
     campoAltura.value = ''
     campoGordura.value = ''
 
-    console.log(pacienteTr)
+
     
 })
+
+function obtemDadosPacientes(formulario) {
+
+    let paciente = {
+
+        nome: formulario.nome.value,
+        peso: formulario.peso.value,
+        altura: formulario.altura.value,
+        gordura: formulario.gordura.value,
+        imc: calculaImc(formulario.peso.value, formulario.altura.value)
+    }
+
+    return paciente
+} 
+
+function montaTr(classe) {
+    let pacienteTr = document.createElement('tr');
+        pacienteTr.classList.add(classe)
+}

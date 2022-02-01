@@ -44,10 +44,18 @@ for (var i = 0; i < pacientes.length; i++) {
     
     // Calcula o imc caso esteja válido
     if (pesoValido && alturaValido) {
-        var imc = peso / (altura * altura);
-        celulaImc.textContent = imc.toFixed(2)
+        var imc = calculaImc(peso, altura);
+        celulaImc.textContent = imc
     }
     
+}
+                // São valores fictícios
+function calculaImc(peso, altura) {
+    var imc = 0;
+    
+    imc = peso / (altura * altura);
+    
+    return imc = imc.toFixed(2)
 }
 
 
