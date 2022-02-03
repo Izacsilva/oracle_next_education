@@ -1,3 +1,5 @@
+
+
 var titulo = document.querySelector('.titulo')
 titulo.textContent = "Aparecida Nutricionista"
 
@@ -19,11 +21,11 @@ for (var i = 0; i < pacientes.length; i++) {
     var celulaImc = paciente.querySelector(".info-imc");
     
     
-    var pesoValido = true;
-    var alturaValido = true;
+    var pesoValido = validaPeso(peso);
+    var alturaValido = validaAltura(altura);
     
     // validação do peso caso não atenda os padrões
-    if (peso < 0 || peso > 400) {
+    if (!pesoValido) {
         celulaImc.textContent = "Peso Inválido"
         var pesoValido = false;
         paciente.classList.add("paciente-invalido")
@@ -31,7 +33,7 @@ for (var i = 0; i < pacientes.length; i++) {
     }
 
     // validação da altura
-    if (altura < 1 || altura > 3.00) {
+    if (!alturaValido) {
         celulaImc.textContent = "altura Inválido"
         var alturaValido = false;
         paciente.classList.add("paciente-invalido")
@@ -49,6 +51,7 @@ for (var i = 0; i < pacientes.length; i++) {
     }
     
 }
+
                 // São valores fictícios
 function calculaImc(peso, altura) {
     var imc = 0;

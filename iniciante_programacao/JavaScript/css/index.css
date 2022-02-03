@@ -141,6 +141,15 @@ button[disabled=disabled], button:disabled {
 	background-color: lightcoral;
 }
 
+#mensagem-erro {
+	color: lightcoral;
+}
+
+.campoErro {
+	border: solid lightcoral 2px;
+	background-color: rgba(241, 156, 156, 0.37);
+}
+
 .btn {
 	background-color: aquamarine;
 }

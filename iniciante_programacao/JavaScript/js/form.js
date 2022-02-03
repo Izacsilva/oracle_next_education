@@ -11,9 +11,34 @@ botaoAdicionar.addEventListener('click', function(event){
     pelo usuário. */
 
     let paciente = obtemDadosPacientes(formulario);
+    
 
     /* MontaTr é uma função que cria uma tag <tr> no HTML*/
     let pacienteTr = montaTr(paciente);
+
+    // validação de paciente.
+    let erros = validaPaciente(paciente);
+
+    console.log(erros)
+
+
+    // colocar um if else aqui
+    if(erros.length > 0) {
+        var mensagemErro = document.querySelector('#mensagem-erro')
+        let campoNome = document.querySelector('#nome')
+        let campoPeso = document.querySelector('#peso')
+        let campoAltura = document.querySelector('#altura')
+        let campoGordura = document.querySelector('#gordura')
+
+        if (paciente.nome.length == 0 || erros.length > 0) campoNome.classList.add('campoErro');
+        if (paciente.peso.length == 0 || erros.length > 0) campoPeso.classList.add('campoErro')
+        if (paciente.altura.length == 0 || erros.length > 0) campoAltura.classList.add('campoErro')
+        if (paciente.gordura.length == 0 || erros.length > 0) campoGordura.classList.add('campoErro')
+
+        mensagemErro.textContent = erros;
+
+        return;
+    }
 
     let tabela = document.querySelector('#tabela-pacientes')
 
