@@ -51,6 +51,13 @@ section h2{
 	margin-bottom: .5em;
 }
 
+#filtroNome {
+	margin-bottom: 1rem;
+	border: 1px solid #ccc;
+	padding: .7em;
+	width: 42%;
+}
+
 table{
 	width: 100%;
 	margin-bottom : .5em;
@@ -141,8 +148,20 @@ button[disabled=disabled], button:disabled {
 	background-color: lightcoral;
 }
 
-#mensagem-erro {
+#mensagens-erro {
 	color: lightcoral;
+}
+
+.liErros {
+	margin-bottom: 0.2rem;
+	background-color: rgba(241, 156, 156, 0.37);
+	border: solid lightcoral 1px;
+	padding: 0.5rem 1rem;
+}
+
+.container .liErros {
+	margin-top: 1rem;
+	
 }
 
 .campoErro {
@@ -152,4 +171,13 @@ button[disabled=disabled], button:disabled {
 
 .btn {
 	background-color: aquamarine;
+}
+
+.fadeOut {
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.invisivel {
+	display: none;
 }

@@ -1,0 +1,22 @@
+<meta content="text/html;charset=UTF-8">
+
+<body>
+    <textarea id="corpo-postagem" cols="40" rows="5"></textarea>
+    <p>Caracteres: <span id="numero-caracteres">0</span> caracteres.</p>
+
+
+    <script>
+        const postagem = document.querySelector("#corpo-postagem");
+
+        function atualizaCaracteres() {
+            var postagem = document.querySelector("#corpo-postagem").value;
+            var caracteres = postagem.length;
+
+            var contador = document.querySelector("#numero-caracteres");
+            contador.innerHTML = caracteres;
+        }
+
+
+        postagem.addEventListener('input', atualizaCaracteres)
+    </script>
+</body>

@@ -3,6 +3,11 @@ const botaoAdicionar = document.querySelector('#adicionar-paciente')
 botaoAdicionar.addEventListener('click', function(event){
     event.preventDefault();
 
+    // Limpa qualquer mensagem de erro que ficar apos ter colocado a informação correta.
+    let ulError = document.querySelector("#mensagens-erro")
+    ulError.innerHTML = ''
+    
+
     // Seleciono o formulário no DOM
     const formulario = document.querySelector('#form-adiciona')
 
@@ -14,41 +19,60 @@ botaoAdicionar.addEventListener('click', function(event){
     
 
     /* MontaTr é uma função que cria uma tag <tr> no HTML*/
-    let pacienteTr = montaTr(paciente);
+    // let pacienteTr = montaTr(paciente);
 
     // validação de paciente.
     let erros = validaPaciente(paciente);
 
-    console.log(erros)
+    
 
 
     // colocar um if else aqui
     if(erros.length > 0) {
-        var mensagemErro = document.querySelector('#mensagem-erro')
-        let campoNome = document.querySelector('#nome')
-        let campoPeso = document.querySelector('#peso')
-        let campoAltura = document.querySelector('#altura')
-        let campoGordura = document.querySelector('#gordura')
 
-        if (paciente.nome.length == 0 || erros.length > 0) campoNome.classList.add('campoErro');
-        if (paciente.peso.length == 0 || erros.length > 0) campoPeso.classList.add('campoErro')
-        if (paciente.altura.length == 0 || erros.length > 0) campoAltura.classList.add('campoErro')
-        if (paciente.gordura.length == 0 || erros.length > 0) campoGordura.classList.add('campoErro')
+        exibeMensagemDeErro(erros)
 
-        mensagemErro.textContent = erros;
+        /* Seleção dos elementos da página. */
+        // var mensagemErro = document.querySelector('#mensagens-erro')
+        // let campoNome = document.querySelector('#nome')
+        // let campoPeso = document.querySelector('#peso')
+        // let campoAltura = document.querySelector('#altura')
+        // let campoGordura = document.querySelector('#gordura')
 
-        return;
+
+        // if (paciente.nome.length == 0 || erros.length > 0) campoNome.classList.add('campoErro');
+        // if (paciente.peso.length == 0 || erros.length > 0) campoPeso.classList.add('campoErro')
+        // if (paciente.altura.length == 0 || erros.length > 0) campoAltura.classList.add('campoErro')
+        // if (paciente.gordura.length == 0 || erros.length > 0) campoGordura.classList.add('campoErro')
+
+        // mensagemErro.textContent = erros;
+
+        return; // O return para a função caso encontre algum erro.
     }
 
-    let tabela = document.querySelector('#tabela-pacientes')
+    // let tabela = document.querySelector('#tabela-pacientes')
 
-    tabela.appendChild(pacienteTr)
+    // tabela.appendChild(pacienteTr)
+
+    adicionaParcientesNaTabela(paciente)
     
     // Limpar campos após enviar os dados para o formulário.
 
     formulario.reset();
     
 })
+
+function exibeMensagemDeErro(erros) {
+    let ulError = document.querySelector("#mensagens-erro")
+
+    ulError.innerHTML = ''
+    erros.forEach(function(erro){
+        let liElement = document.createElement('li');
+        liElement.classList.add('liErros')
+        liElement.textContent = erro;
+        ulError.appendChild(liElement);
+    })
+}
 
 function obtemDadosPacientes(formulario) {
 
@@ -90,5 +114,11 @@ function montaTr(paciente) {
     pacienteTr.appendChild(imc_tr);
 
     return pacienteTr
+}
+
+function adicionaParcientesNaTabela(paciente) {
+    let pacienteTr = montaTr(paciente);
+    let tabela = document.querySelector('#tabela-pacientes')
+    tabela.appendChild(pacienteTr)
 }
 
