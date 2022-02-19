@@ -1,56 +1,38 @@
-// Cria a classes de clientes.
-class Cliente{
-    nome;
-    cpf;
-    
-
-}
-
-class ContaCorrente{
-    agencia;
-    // #saldo = 0; https://github.com/tc39/proposal-class-fields#private-fields
-
-    _saldo = 0;
-
-    sacar(valor) {
-        // This quer dizar dela ou dele.
-        /* Então, deste saldo, ou se o saldo da conta tiver uma quantidade
-         * maior que o valor que foi passado no parâmentro*/
-        if(this._saldo >= valor) {
-
-            // Saque do saldo da conta o valor pedido.
-            this._saldo -= valor
-            return valor
-        } else {
-            console.log(`Saldo insuficiente ${this._saldo}`)
-        }
-    }
-
-    depositar(valor) {
-        // Só pode deposita se o valor for maior que zero.
-        if(valor > 0) {
-            this._saldo += valor
-        } else {
-            console.log(`Essa operação não pode ser efetuada! O valor ${valor} é incorreto.`)
-        }
-    }
-}
+import {Cliente} from './Clientes.js'
+import {ContaCorrente} from './ContaCorrente.js'
 
 // Cria um novo objeto cliente.
-const Joao = new Cliente()
-Joao.nome = "João"
-Joao.cpf = 8206660033
+const clienteJoao = new Cliente()
+clienteJoao.nome = "João"
+clienteJoao.cpf = 8206660033
 
 // Cria uma nova ContaCorrente().
-const contaDOJoao = new ContaCorrente()
-contaDOJoao.agencia = 1001
+const contaDoJoao = new ContaCorrente()
+contaDoJoao.agencia = 1001
+contaDoJoao.cliente = clienteJoao
 
 // João faz o primeiro deposito.
 
-contaDOJoao.depositar(200)
-contaDOJoao.sacar(50)
-contaDOJoao.depositar(150)
+contaDoJoao.depositar(200)
+contaDoJoao.sacar(50)
+contaDoJoao.depositar(150)
+const valorSacado = contaDoJoao.sacar(50)
+
 // contaDOJoao.depositar(-1)
 
+// Cria um novo objeto cliente.
+const clienteAlice = new Cliente()
+clienteAlice.nome = ["Alice", "Maciel"]
+clienteAlice.cpf = 8206480073
 
-console.log(`Cliente ${Joao.nome}, saldo ${contaDOJoao._saldo}`)
+// Cria uma nova ContaCorrente().
+const contaAlice = new ContaCorrente()
+contaAlice.agencia = 1001
+contaAlice.cliente = clienteAlice
+
+contaDoJoao.transferir(200, contaAlice)
+
+
+// console.log(`Cliente ${Joao.nome}, saldo ${contaDOJoao._saldo}`)
+
+console.log(contaDoJoao, contaAlice)
