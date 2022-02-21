@@ -29,10 +29,11 @@ clienteAlice.cpf = 8206480073
 const contaAlice = new ContaCorrente()
 contaAlice.agencia = 1001
 contaAlice.cliente = clienteAlice
+// contaAlice.cliente = 0;
 
 contaDoJoao.transferir(200, contaAlice)
 
 
 // console.log(`Cliente ${Joao.nome}, saldo ${contaDOJoao._saldo}`)
 
-console.log(contaDoJoao, contaAlice)
+console.log(contaAlice.cliente)
