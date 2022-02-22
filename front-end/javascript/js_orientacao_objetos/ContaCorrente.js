@@ -1,5 +1,6 @@
 import {Cliente} from './Clientes.js'
 export class ContaCorrente{
+    static numeroDeContas = 0;
     agencia;
     _cliente;
     
@@ -32,6 +33,12 @@ export class ContaCorrente{
         return this._saldo
     }
 
+    constructor (agencia, cliente) {
+        this.agencia = agencia;
+        this._cliente = cliente;
+        ContaCorrente.numeroDeContas += 1;
+    };
+
     sacar(valor) {
         // This quer dizar dela ou dele.
         /* Então, deste saldo, ou se o saldo da conta tiver uma quantidade
@@ -44,7 +51,7 @@ export class ContaCorrente{
         } else {
             console.log(`Saldo insuficiente ${this._saldo}`)
         }
-    }
+    };
 
     depositar(valor) {
         // Só pode deposita se o valor for maior que zero.
@@ -53,7 +60,7 @@ export class ContaCorrente{
         } else {
             console.log(`Essa operação não pode ser efetuada! O valor ${valor} é incorreto.`)
         }
-    }
+    };
     
     transferir(valor, conta) {
         const valorSacado = this.sacar(valor); // retirar o valor "informado como parâmetro" desta minha conta armazena em uma variável.
