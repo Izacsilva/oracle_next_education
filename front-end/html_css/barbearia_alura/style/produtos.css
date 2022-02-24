@@ -1,10 +1,31 @@
 header {
     background-color: #bbbbbb;
+    padding: 20px 0;
+}
+
+/* O container criar uma caixa em volta dos elemento, e tem largura fixa
+para delimitar o tamanho dos elementos. */
+
+/* A propriedade position é necessária para que o position absolute do elemento nav possar realtivo ao pai */
+
+.container {
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+    
+    
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
 }
 
 nav li {
     display: inline;
     margin: 0 0 0 15px;
+    
 }
 
 nav a {
