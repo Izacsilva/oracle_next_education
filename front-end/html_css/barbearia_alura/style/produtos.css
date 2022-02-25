@@ -35,3 +35,43 @@ nav a {
     font-size: 22px;
     text-decoration: none;
 }
+
+.produtos {
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.produtos li {
+    /* background: #cccccc; */
+    display: inline-block; /* transforma os blocks em linhas, assim eles ocuparão a largura do tamanho do conteúdo, mas permenecerão na mesma linha*/
+    text-align: center; /* todos os textos estarão alinhados ao centro.*/
+    width: 30%; /* os cards de produtos, terão apenas 30% do tamanho total da caixa que os envolve.*/
+    vertical-align: top; /* faz com que os elementos dentro da tag, sejão centralizados ao seu top.*/
+
+    box-sizing: border-box;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+.produtos li h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produto li, .produto-descricao {
+    font-size: 22px;
+    margin-top: 24px;
+    
+}
+
+.produtos li .produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 24px;
+}
+
