@@ -1,40 +1,17 @@
-import {Cliente} from './Clientes.js'
-export class ContaCorrente{
+
+import { Conta } from './Conta.js'
+
+export class ContaCorrente extends Conta{
     static numeroDeContas = 0;
-    
-    // Não é mais utilizado _cliente;
-    
-    /* Aqui eu irei protejer minha propriedade _cliente, para não receber qualquer valor
-     * que não seja uma instância(objeto). utilizando uma estrutura semelhante a um metódo(função).
-     * igual a um método ele recebe um parâmentro como valor "cliente(valor)". Diferente de um
-     * metódo ele não precisa ser chamado(invocado) com os parêntese "novaConta.cliente()"
-     * e sim atribuindo valor com o operador de atribuição(=) "novaConta.cliente = object " 
-    */
-   
-    //metódo set
-    set cliente(novoValor) {
-        // só atribua o valor se o novoValor for uma instância.
-        if(novoValor instanceof Cliente) {
-            this._cliente = novoValor
-        }
-        
-    }
+
     // set e get == Acessor
     // acesso sempre é público.
     get cliente() {
         return this._cliente
     }
-    // #saldo = 0; https://github.com/tc39/proposal-class-fields#private-fields
-    
-    // atributo privado - underline "_" para dizer que um atributo é privado.
-    // Não é mais utilizado "_saldo = 0;", está dentro do construtor.
 
-    _saldo = 0;
-
-    constructor (agencia, cliente) {
-        this.agencia = agencia;
-        this._cliente = cliente;
-        this._saldo = 0; 
+    constructor (cliente, agencia) {
+        super(0, cliente, agencia);
         ContaCorrente.numeroDeContas += 1;
     };
 
@@ -43,32 +20,21 @@ export class ContaCorrente{
     }
 
     sacar(valor) {
+        
+        let taxa = 1.1
 
-        taxa = 1.1 * valor
-        // This quer dizar dela ou dele.
-        /* Então, deste saldo, ou se o saldo da conta tiver uma quantidade
-         * maior que o valor que foi passado no parâmentro*/
-        if(this._saldo >= valor) {
+        const valorSacado = taxa * valor; // Pego o valor que o cliente quer sacar e atribuo uma taxa de 1.1
 
-            // Saque do saldo da conta o valor pedido.
-            this._saldo -= valor
-            return valor
+        if(this._saldo >= valorSacado) { // Se tiver dinheiro"Saldo" e for igual ou maior ao valor que quer sacar
+
+            this._saldo -= valorSacado // Retira o valor incluso juros da conta
+            return valorSacado
+        
         } else {
             console.log(`Saldo insuficiente ${this._saldo}`)
         }
+
     };
 
-    depositar(valor) {
-        // Só pode deposita se o valor for maior que zero.
-        if(valor > 0) {
-            this._saldo += valor
-        } else {
-            console.log(`Essa operação não pode ser efetuada! O valor ${valor} é incorreto.`)
-        }
-    };
-    
-    transferir(valor, conta) {
-        const valorSacado = this.sacar(valor); // retirar o valor "informado como parâmetro" desta minha conta armazena em uma variável.
-        conta.depositar(valorSacado)        // e deposita o valor da variável "valorSacado" na conta passada como parâmentro.
-    }
+
 }
