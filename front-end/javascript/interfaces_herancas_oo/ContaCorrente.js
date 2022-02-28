@@ -19,20 +19,23 @@ export class ContaCorrente extends Conta{
         return this._saldo
     }
 
+
+    // sobrescreve o comportamento da classe mãe.
     sacar(valor) {
         
         let taxa = 1.1
 
-        const valorSacado = taxa * valor; // Pego o valor que o cliente quer sacar e atribuo uma taxa de 1.1
+        return this._sacar(valor, taxa)
+        // const valorSacado = taxa * valor; // Pego o valor que o cliente quer sacar e atribuo uma taxa de 1.1
 
-        if(this._saldo >= valorSacado) { // Se tiver dinheiro"Saldo" e for igual ou maior ao valor que quer sacar
+        // if(this._saldo >= valorSacado) { // Se tiver dinheiro"Saldo" e for igual ou maior ao valor que quer sacar
 
-            this._saldo -= valorSacado // Retira o valor incluso juros da conta
-            return valorSacado
+        //     this._saldo -= valorSacado // Retira o valor incluso juros da conta
+        //     return valorSacado
         
-        } else {
-            console.log(`Saldo insuficiente ${this._saldo}`)
-        }
+        // } else {
+        //     console.log(`Saldo insuficiente ${this._saldo}`)
+        // }
 
     };
 

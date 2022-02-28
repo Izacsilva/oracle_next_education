@@ -2,9 +2,14 @@ import {Cliente} from './Clientes.js'
 
 export class Conta{
     constructor(saldoInicial, cliente, agencia) {
+        if(this.constructor == Conta){
+           throw new Error("Você não deveria instanciar um objeto do tipo conta.")
+        }
+        
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
+
     }
 
 // Só adicione cliente se for objeto de cliente.
@@ -20,15 +25,23 @@ set cliente(novoValor) {
 
 
     sacar(valor) {
+        let taxa = 1;
+        return this._sacar(valor, taxa)
+        
+    };
 
-        if(this._saldo >= valor) {
+    _sacar(valor, taxa) {
+        
+        const valorSacado = taxa * valor
 
-            this._saldo -= valor
-            return valor
+        if(this._saldo >= valorSacado) {
+
+            this._saldo -= valorSacado
+            return valorSacado
         } else {
             console.log(`Saldo insuficiente ${this._saldo}`)
-        }
-    };
+        } 
+    }
 
     depositar(valor) {
 
