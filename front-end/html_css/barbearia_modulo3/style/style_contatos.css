@@ -8,13 +8,6 @@ para delimitar o tamanho dos elementos. */
 
 /* A propriedade position é necessária para que o position absolute do elemento nav possar realtivo ao pai */
 
-.container {
-    width: 940px;
-    position: relative;
-    margin: 0 auto;
-    
-    
-}
 
 nav {
     position: absolute;
@@ -42,6 +35,26 @@ nav a:hover {
     border-bottom: 1px solid rgb(204, 142, 27); 
 }
 
+.container {
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+    padding: 40px 0; 
+    
+}
+
+form label, input {
+    display:block;
+    margin: 0 0 16px;
+}
+
+form label {
+    font-size: 1.3rem;
+}
+form input {
+    padding: 12px;
+    width: 50%;
+}
 
 footer {
     text-align: center;
