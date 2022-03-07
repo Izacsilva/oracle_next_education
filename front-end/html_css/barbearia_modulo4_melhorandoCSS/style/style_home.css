@@ -1,0 +1,45 @@
+.logo {
+    padding-left: 1.8rem;
+}
+
+.principal {
+    background-color: lightgray;
+    padding: 50px;
+}
+
+#banner {
+    width: 100%
+}
+
+.centralizado, p {
+    text-align: center;
+}
+
+strong {
+    color: red;
+}
+
+.itens {
+    font-style: italic;
+}
+
+.beneficios {
+    background-color: white;
+}
+
+.beneficios .title {
+    text-align: center;
+}
+
+.beneficios .lista {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin-right: 15px;
+    
+}
+
+.beneficios img {
+    width: 50%;
+    margin-left: 5px;
+}
