@@ -1,4 +1,4 @@
-import {Cliente} from './Clientes.js'
+import {Cliente} from '../Clientes.js'
 
 export class Conta{
     constructor(saldoInicial, cliente, agencia) {
