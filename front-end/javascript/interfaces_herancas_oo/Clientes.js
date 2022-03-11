@@ -10,10 +10,15 @@ export class Cliente{
         return this._cpf; // get para receber o valor que está em cpf.
     }
 
-    constructor (nome, cpf) { // Esse contrutor, é o bloco de código que atribui.
+    get  senha() {
+        return this._senha;
+    }
+
+    constructor (nome, cpf, senha) { // Esse contrutor, é o bloco de código que atribui.
 
         // Dentro do construtor
         this.nome = nome
         this._cpf = cpf // valores para nome e _cpf. assim, podemos passar os valores como parâmentro.
+        this._senha = senha;
     }
 }

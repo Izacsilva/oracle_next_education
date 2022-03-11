@@ -1,14 +1,19 @@
-import {Cliente} from '.Contas/Clientes.js'
-import {ContaCorrente} from '.Contas/ContaCorrente.js'
-import { ContaPoupanca } from '.Contas/ContaPoupanca.js'
-import { Conta} from './Contas/Conta.js'
-const clienteJoao = new Cliente("João", 8206660033)
+import { Gerente } from './Funcionarios/gerente.js';
+import { Diretor } from './Funcionarios/diretor.js';
+import {SistemaDeLogin} from './SistemaDeLogin.js'
+import { Cliente } from './Clientes.js';
 
-const contaDoJoao = new ContaCorrente(clienteJoao, 1001)
-contaDoJoao.depositar(200)
-const valorSacado = contaDoJoao.sacar(50)
-const poupancaJoao = new ContaPoupanca(150, clienteJoao, 1001)
-const sacaValor = poupancaJoao.sacar(50)
-const contaJoao = new Conta(0, clienteJoao, 1001)
+const Rodrigo = new Diretor("Rodrigo", 10000, "12345872")
+Rodrigo.cadastrarSenha("123456")
 
-console.log(contaDoJoao, poupancaJoao)
+const Felipe = new Gerente("Felipe", 5000, "12348972")
+Felipe.cadastrarSenha("123")
+
+const Roberta = new Cliente("Roberta", "133587625", "456")
+
+
+const diretorLogado = SistemaDeLogin.login(Rodrigo, "123456")
+const gerenteLogado = SistemaDeLogin.login(Felipe, "123")
+const clienteLogado = SistemaDeLogin.login(Roberta, "456")
+
+console.log(clienteLogado)

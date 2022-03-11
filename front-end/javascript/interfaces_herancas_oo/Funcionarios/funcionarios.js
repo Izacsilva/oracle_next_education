@@ -3,6 +3,7 @@ export class Funcionarios {
         this._nome = nome
         this._salario = salario
         this._cpf = cpf
+        this._senha; // O valor de senha, é dado através do método "cadastrarSenha" através da interface.
         
         this._bonificacao = 1;
     }
@@ -10,6 +11,8 @@ export class Funcionarios {
     get senha() {
         return this._senha;
     }
+
+    // Gera uma senha para o usuário e armazena em "this.senha" no construtor.
     cadastrarSenha(senha) {
         this._senha = senha;
     }
