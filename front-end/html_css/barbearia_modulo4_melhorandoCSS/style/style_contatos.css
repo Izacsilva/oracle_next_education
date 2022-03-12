@@ -56,20 +56,6 @@ form label, form legend {
     width: 50%;
 }
 
-footer {
-    text-align: center;
-    background: url("../imagens/bg.jpg");
-    padding: 40px 0;
-}
-
-footer .copyright {
-    color: white;
-    font-family: sans-serif;
-    font-size: 14px;
-
-    margin: 24px 0;
-}
-
 .enviar {
     width: 50%;
     padding: 16px 0;
@@ -104,5 +90,19 @@ table th {
 table td, th {
     padding: 12px 18px;
     border: solid 1px darkgrey;
+}
+
+footer {
+    text-align: center;
+    background: url("../imagens/bg.jpg");
+    padding: 40px 0;
+}
+
+footer .copyright {
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+
+    margin: 24px 0;
 }
 
