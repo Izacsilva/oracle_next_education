@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.container {
+    background-color: rgb(114, 84, 144);
+    max-width: 580px;
+    padding: 40px;
+
+    min-height: 380px;
+}
+
+.cabecalho h1 {
+    color: white;
+    margin-bottom: 16px;
+    letter-spacing: 0.1rem;
+}
+
+hr {
+    margin: 8px 0 ;
+}
+
+.form {
+    display:flex;
+    align-items: center;
+}
+
+.input-task, .btnNewItem {
+    height: 52px;
+    border: none;
+    font-size: 16px;
+}
+
+.input-task {
+    border-radius: 4px 0px 0px 4px;
+
+}
+
+.btnNewItem {
+    background-color: rgb(233, 186, 68);
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    color: rgb(114, 84, 144);;
+    padding: 8px 16px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.06rem;
+
+    transition: 0.4s;
+}
+
+.btnNewItem:hover {
+    background-color: rgb(240, 202, 106)
+}
+
+.btnNewItem:active {
+    background-color:rgb(202, 154, 31);
+    transform: scale(0.96)
+    
+}
