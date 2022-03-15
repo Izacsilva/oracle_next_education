@@ -41,24 +41,27 @@ hr {
     height: 52px;
     border: none;
     font-size: 16px;
+    padding: 8px 16px;
+
+    font-family: 'Fredoka', sans-serif;
 }
 
 .input-task {
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 8px 0px 0px 8px;
 
 }
 
+
 .btnNewItem {
     background-color: rgb(233, 186, 68);
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 0px 8px 8px 0px;
     cursor: pointer;
-    color: rgb(114, 84, 144);;
-    padding: 8px 16px;
+    color: rgb(114, 84, 144);
     font-family: 'Fredoka', sans-serif;
     font-weight: bold;
     letter-spacing: 0.06rem;
 
-    transition: 0.4s;
+    transition: background 0.4s;
 }
 
 .btnNewItem:hover {
@@ -69,4 +72,25 @@ hr {
     background-color:rgb(202, 154, 31);
     transform: scale(0.96)
     
+}
+
+.list {
+    list-style: none;
+    margin-top: 16px;
+}
+    
+.item-list {
+    background: rgb(125, 91, 158);
+    border:rgb(136, 102, 170) solid 1px;
+    border-radius: 8px;
+    color: white;
+    padding: 16px;
+    margin-bottom: 8px; 
+    font-size: 18px;
+
+    transition: background 0.4s;
+}
+
+.item-list:hover {
+    background: rgb(136, 102, 170);
 }
