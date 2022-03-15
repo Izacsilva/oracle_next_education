@@ -6,4 +6,8 @@ export class Gerente extends Funcionarios{
         
         this._bonificacao = 1.1;
     }
+
+    autenticar() {
+        return true;
+    }
 }

@@ -16,4 +16,4 @@ const diretorLogado = SistemaDeLogin.login(Rodrigo, "123456")
 const gerenteLogado = SistemaDeLogin.login(Felipe, "123")
 const clienteLogado = SistemaDeLogin.login(Roberta, "456")
 
-console.log(clienteLogado)
+console.log(gerenteLogado)

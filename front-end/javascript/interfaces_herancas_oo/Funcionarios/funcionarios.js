@@ -8,8 +8,9 @@ export class Funcionarios {
         this._bonificacao = 1;
     }
 
-    get senha() {
-        return this._senha;
+    // método 
+    autenticar(senha) {
+        return senha == this._senha
     }
 
     // Gera uma senha para o usuário e armazena em "this.senha" no construtor.

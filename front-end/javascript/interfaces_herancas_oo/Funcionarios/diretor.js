@@ -6,6 +6,8 @@ export class Diretor extends Funcionarios{
         this._bonificacao = 2;
     }
 
-    
+    autenticar() {
+        return true;
+    }
 
 }

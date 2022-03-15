@@ -21,4 +21,8 @@ export class Cliente{
         this._cpf = cpf // valores para nome e _cpf. assim, podemos passar os valores como parâmentro.
         this._senha = senha;
     }
+
+    autenticar() {
+        return true;
+    }
 }
