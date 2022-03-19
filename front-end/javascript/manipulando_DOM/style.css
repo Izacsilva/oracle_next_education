@@ -16,7 +16,7 @@ body {
 
 .container {
     background-color: rgb(114, 84, 144);
-    max-width: 580px;
+    max-width: 820px;
     padding: 40px;
 
     min-height: 380px;
@@ -37,7 +37,7 @@ hr {
     align-items: center;
 }
 
-.input-task, .btnNewItem {
+.input-task, .btnNewItem, .date-time {
     height: 52px;
     border: none;
     font-size: 16px;
@@ -49,6 +49,10 @@ hr {
 .input-task {
     border-radius: 8px 0px 0px 8px;
 
+}
+
+.date-time {
+    border-left: solid 2px #c3c3c3;
 }
 
 
