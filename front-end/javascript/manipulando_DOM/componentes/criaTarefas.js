@@ -1,5 +1,6 @@
 import BotaoDeletar from "./deletaTarefas.js";
 import BotaoConclui from "./concluirTarefas.js";
+import { carregaTarefas } from "./carregaTarefas.js";
 
 
 
@@ -8,10 +9,10 @@ export const novoItem = (evento) => {
         
     evento.preventDefault() //Evita o reloud da página
 
-    const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+    const nTarefas = JSON.parse(localStorage.getItem("tarefas")) || []; // Em getItem() o valor da chave, deve ser igual a mesma chave de setItem---
 
     // Pesquisa(busca) elementos no DOM
-    const lista = document.querySelector("[data-list]");
+    // const lista = document.querySelector("[data-list]");
     const calendario = document.querySelector("[data-form-time]");
     const input = document.querySelector("[data-form-input]");
     const valor = input.value;
@@ -24,17 +25,18 @@ export const novoItem = (evento) => {
         dateFormated
     };
 
-    const tarefasAtualizadas = [...tarefas, dados];
+    const tarefasAtualizadas = [...nTarefas, dados];
     
-    const criaTarefa = Tarefas(dados); // Invoca a função, recebe como retorno um componente que será impresso na tela.
+    // const criaTarefa = Tarefas(dados); // Invoca a função, recebe como retorno um componente que será impresso na tela.
     
+    console.log(tarefasAtualizadas)
     
-    localStorage.setItem("tarefa", JSON.stringify(tarefasAtualizadas));
+    localStorage.setItem("tarefas", JSON.stringify(tarefasAtualizadas)); // Em getItem() o valor da chave, deve ser igual a mesma chave de setItem---
     
-    lista.appendChild(criaTarefa); // Imprime o elemento no DOM.
+    // lista.appendChild(criaTarefa); // Imprime o elemento no DOM.
     input.value = " ";
 
-    
+    carregaTarefas()
     
 
 }
