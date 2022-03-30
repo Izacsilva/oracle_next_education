@@ -119,3 +119,10 @@ hr {
     opacity: 0.5;
     text-decoration: line-through;
 }
+
+.content-data {
+    margin-bottom: 16px;
+    margin-left: 16px;
+    font-size: 18px;
+    color: white;
+}
